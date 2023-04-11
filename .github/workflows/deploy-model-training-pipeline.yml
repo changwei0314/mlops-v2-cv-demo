@@ -29,7 +29,7 @@ jobs:
     needs: [get-config]
     uses: Azure/mlops-templates/.github/workflows/create-compute.yml@main
     with:
-      cluster_name: cpu-cluster-cv
+      cluster_name: cpu-cluster
       size: Standard_DS3_v2
       min_instances: 0
       max_instances: 4
@@ -40,7 +40,7 @@ jobs:
       creds: ${{secrets.AZURE_CREDENTIALS}}
   create-training-compute:
     needs: get-config
-    uses: changwei0314/mlops-templates/.github/workflows/create-compute.yml@main
+    uses: Azure/mlops-templates/.github/workflows/create-compute.yml@main
     with:
       cluster_name: gpu-cluster
       size: Standard_NC6
