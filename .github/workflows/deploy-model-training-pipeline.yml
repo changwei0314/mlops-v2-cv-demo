@@ -40,7 +40,7 @@ jobs:
       creds: ${{secrets.AZURE_CREDENTIALS}}
   create-training-compute:
     needs: get-config
-    uses: Azure/mlops-templates/.github/workflows/create-compute.yml@main
+    uses: changwei0314/mlops-templates/.github/workflows/create-compute.yml@main
     with:
       cluster_name: gpu-cluster
       size: Standard_NC6
